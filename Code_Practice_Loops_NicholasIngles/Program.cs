@@ -33,11 +33,51 @@ public partial class Program
                 Console.Write("Give a positive integer: ");
                 integer = int.Parse(Console.ReadLine());
             }
-
+            for (int i = 1; i > integer; i++)
+            {
+                if (i % 3 == 0 && i % 5 != 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0 && i % 3 != 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("Fizz Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
         }
         catch
         {
-            Console.WriteLine("Error ocurred");
+            Console.WriteLine("\nError occurred");
+        }
+        Console.WriteLine("\nFactorial\n");
+        try
+        {
+            int factorial = 0;
+            while (factorial <= 0)
+            {
+                Console.Write("Give a positive integer: ");
+                factorial = int.Parse(Console.ReadLine());
+            }
+            int result1 = 1;
+            int result2 = 0;
+            for (int i = factorial; i <= 1; i -= 2)
+            {
+                result1 = result2;
+                result2 = (i * (i - 1)) * result1;
+            }
+            Console.WriteLine("Result: " + result2);
+        }
+        catch
+        {
+            Console.WriteLine("\nError occurred");
         }
     }
 }
