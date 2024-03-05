@@ -33,7 +33,7 @@ public partial class Program
                 Console.Write("Give a positive integer: ");
                 integer = int.Parse(Console.ReadLine());
             }
-            for (int i = 1; i > integer; i++)
+            for (int i = 1; i <= integer; i++)
             {
                 if (i % 3 == 0 && i % 5 != 0)
                 {
@@ -66,14 +66,11 @@ public partial class Program
                 Console.Write("Give a positive integer: ");
                 factorial = int.Parse(Console.ReadLine());
             }
-            int result1 = 1;
-            int result2 = 0;
-            for (int i = factorial; i <= 1; i -= 2)
+            for (int i = factorial - 1; i > 0; i--)
             {
-                result1 = result2;
-                result2 = (i * (i - 1)) * result1;
+                factorial *= i;
             }
-            Console.WriteLine("Result: " + result2);
+            Console.WriteLine("Result: " + factorial);
         }
         catch
         {
